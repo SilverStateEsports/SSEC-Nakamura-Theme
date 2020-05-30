@@ -22,7 +22,8 @@
         "ghost",
         "theme",
         "ghost-theme",
-        "silver-state-esports"
+        "silver-state-esports",
+        "circuit"
     ],
     "config": {
         "posts_per_page": 10,
