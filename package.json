@@ -18,6 +18,9 @@
             "Minimal"
         ]
     },
+    "devDependencies": {
+        "gscan": "3.4.1"
+    },
     "keywords": [
         "ghost",
         "theme",
