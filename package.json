@@ -5,10 +5,25 @@
     "engines": {
         "ghost-api": "v3"
     },
+    "scripts": {
+        "test": "gscan ."
+    },
     "author": {
         "name": "Billy Myers",
         "email": "billymyers1020@gmail.com"
     },
+    "gpm": {
+        "type": "theme",
+        "categories": [
+            "Minimal"
+        ]
+    },
+    "keywords": [
+        "ghost",
+        "theme",
+        "ghost-theme",
+        "silver-state-esports"
+    ],
     "config": {
         "posts_per_page": 10,
         "image_sizes": {}
