@@ -6,7 +6,8 @@
         "ghost-api": "v3"
     },
     "scripts": {
-        "test": "gscan ."
+        "test": "gscan .",
+        "zip": "gulp zip"
     },
     "author": {
         "name": "Billy Myers",
@@ -19,7 +20,10 @@
         ]
     },
     "devDependencies": {
-        "gscan": "3.4.1"
+        "gscan": "3.4.1",
+        "gulp": "^4.0.2",
+        "gulp-zip": "^5.0.1",
+        "pump": "^3.0.0"
     },
     "keywords": [
         "ghost",
