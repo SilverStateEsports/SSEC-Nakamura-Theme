@@ -11,13 +11,11 @@ sass.compiler = require('node-sass');
 const handleError = (done) => {
     return function (err) {
         if (err) {
-            
+            // TODO: Do something with this
         }
         return done(err);
     }
 }
-
-// TODO: Add tasks for Gulp
 
 // Builds scss
 function scss(cb) {
