@@ -1,5 +1,6 @@
 // Gulp requirements
-const { series, src, dest } = require('gulp');
+const { series, parallel, src, dest } = require('gulp');
+const del = require('delete');
 const pump = require('pump');
 const zip = require('gulp-zip');
 const sass = require('gulp-sass');
@@ -28,12 +29,12 @@ function scss(cb) {
 }
 
 // Clean function removes distribution files
-function clean(cb) {
-
+function cleanup(cb) {
+    del(['build/**/*', 'assets/css/**/*', 'build'], cb)
 }
 
 // Zip function zips up the enitre directory and allows us to distribute it.
-function zip(cb) {
+function zipper(cb) {
     const filename = require('./package.json').name + '.zip';
     pump([
         src([
@@ -49,5 +50,10 @@ function zip(cb) {
 function defaultTask(cb) {
     cb();
 }
-exports.zip = series(zip);
-exports.default = defaultTask
+
+const build = parallel(scss);
+
+exports.build = build;
+exports.zip = series(build, zipper);
+exports.clean = series(cleanup);
+exports.default = build;
