@@ -2,7 +2,30 @@
 const { series, src, dest } = require('gulp');
 const pump = require('pump');
 const zip = require('gulp-zip');
+const sass = require('gulp-sass');
+
+// Setup variables
+sass.compiler = require('node-sass');
+
+const handleError = (done) => {
+    return function (err) {
+        if (err) {
+            
+        }
+        return done(err);
+    }
+}
+
 // TODO: Add tasks for Gulp
+
+// Builds scss
+function scss(cb) {
+    pump([
+        src('assets/scss/*.scss', {sourcemaps: true}),
+        sass(),
+        dest('assets/css/', {sourcemaps: '.'})
+    ], handleError(cb));
+}
 
 // Clean function removes distribution files
 function clean(cb) {
@@ -20,7 +43,7 @@ function zip(cb) {
         ]),
         zip(filename),
         dest('build/')
-    ]);
+    ], handleError(cb));
 }
 
 function defaultTask(cb) {

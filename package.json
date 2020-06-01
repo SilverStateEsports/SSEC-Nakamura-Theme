@@ -5,6 +5,7 @@
     "engines": {
         "ghost-api": "v3"
     },
+    "license": "MPL-2.0",
     "scripts": {
         "test": "gscan .",
         "zip": "gulp zip"
@@ -20,10 +21,18 @@
         ]
     },
     "devDependencies": {
+        "autoprefixer": "^9.8.0",
+        "bootstrap": "^4.5.0",
         "gscan": "3.4.1",
         "gulp": "^4.0.2",
+        "gulp-sass": "^4.1.0",
         "gulp-zip": "^5.0.1",
+        "node-sass": "^4.14.1",
         "pump": "^3.0.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/SilverStateEsports/SSEC-Nakamura-Theme"
     },
     "keywords": [
         "ghost",
